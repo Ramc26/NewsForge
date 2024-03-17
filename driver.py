@@ -7,6 +7,8 @@ from dataclasses import dataclass
 class ArticleData:
     source: str
     title: str
+    # src_icon:str
+    date:str
     desc: str
     url: str
     image: str
@@ -22,7 +24,7 @@ class ArticleData:
 # print(json.dumps(resp, indent=4))
 # query=input()
 def getNews(query,lang,category):
-    query=query.replace(" ", "-")
+    query=query.replace(" ", "%20")
     if lang == "" and category == "":
         url=f'https://newsdata.io/api/1/news?apikey=pub_40118922316862ca8ce45e8c136c1b24989c7&q={query}'
     elif category=="":
@@ -35,12 +37,14 @@ def getNews(query,lang,category):
     print(json.dumps(resp, indent=4))
     # print(resp.json(indent=4))
     if resp.get('status') == 'success' and resp.get('totalResults') > 0:
-        articles = resp.get('results')[:5]
+        articles = resp.get('results')[:10]
         news_data = []
         for article in articles:
             data = ArticleData(
                 source=article.get('source_id'),
+                # icon=article.get('source_icon'),
                 title=article.get('title'),
+                date=article.get('pubDate'),
                 desc=article.get('description'),
                 url=article.get('link'),
                 image=article.get('image_url'),
