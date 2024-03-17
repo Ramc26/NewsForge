@@ -69,7 +69,7 @@ Sixtyfour: CSS class for a variable style
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            color: ivory;
+            color: white;
             background-color: #121212;
         }
         .NAF{
@@ -92,7 +92,7 @@ Sixtyfour: CSS class for a variable style
         }
 
         .article {
-            padding: 1rem 2rem;
+            padding: 1rem 1rem;
             margin-bottom: 2rem;
             margin-top: 1rem;
             border: 0.1rem solid ivory;
@@ -107,9 +107,20 @@ Sixtyfour: CSS class for a variable style
 }
 
         .source, .title, .desc, .url, .img {
-            font-family: "Gugi", sans-serif;
+            font-family: "Big Shoulders Stencil Display", sans-serif;
             margin-bottom: 10px;
-            font-size: 1.2rem;
+            color: #fec89a;
+            font-size: 1.7rem;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            font-family: Gugi;
+            font-size: 0.2rem;
+            margin: 0;
+            background: #282a36;
+            color: #f9dcc4;
         }
 
         .formatted-content{
@@ -121,6 +132,7 @@ Sixtyfour: CSS class for a variable style
         span{
             font-family: "Chivo Mono", monospace;
             font-size: 1rem;
+            color: white;
         }
 
         img {
@@ -129,8 +141,13 @@ Sixtyfour: CSS class for a variable style
         }
 
         .container {
-            max-width: 100%;
-            overflow-x: hidden; /* Hide horizontal scroll */
+            /* max-width: 100%; */
+            overflow-x: hidden; 
+        }
+
+        img{
+            filter: drop-shadow(rgba(255, 255, 255, 0.499) 0rem 0rem 0.5rem);
+            border-radius: 1rem;
         }
 
         .input-group {
@@ -142,6 +159,7 @@ Sixtyfour: CSS class for a variable style
     <div class="container">
         <div class="header text-center">
             <p>NewsForge</p>
+            <p style="font-size: 1rem; font-family: Grenze Gotisch, serif">Stay informed, stay empowered. NewsForge brings you the world's stories at your fingertips.</p>
         </div>
         <form action="/" method="post" class="form-group">
             <div class="row">
@@ -201,6 +219,13 @@ Sixtyfour: CSS class for a variable style
             {% endif %}
         </div>
     </div>
+
+    <footer class="text-center">
+        <div class="footer">
+            <span>&copy; 2024 NewsForge | All rights reserved.</span>
+            <span>This website is the intellectual property of <b><u><a href="https://ramc26.github.io/RamTechSuite/" target="_blank" style="text-decoration: none; color: yellow;">@itsmeramc</a></u></b>. Any unauthorized reproduction or distribution of this content is prohibited.</span>
+        </div>
+    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
