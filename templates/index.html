@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NewsForge</title>
+    <!-- MDB -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
      <link rel="shortcut icon" type="image/x-icon" href="logo.jpg" />
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.css" rel="stylesheet"/>
     <!-- 
 
         Gugi: CSS class
@@ -65,6 +67,227 @@ Sixtyfour: CSS class for a variable style
      -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@100..900&family=Chivo+Mono:ital,wght@0,100..900;1,100..900&family=Grenze+Gotisch:wght@100..900&family=Gugi&family=Sixtyfour&display=swap');
+        @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+/***********************/
+/* RESET CSS */
+/***********************/
+
+
+html {
+  /* 
+    font-size: 10px; 
+    10px / 16px = 0.625 = 62.5%
+    Percentage of user's browser font-size setting
+  */
+  /* font-size: 85%; */
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+a:link,
+a:visited {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+/* HELPER CLASSES */
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+/***********************/
+/* NAVIGATION MENU */
+/***********************/
+
+/* OVERLAY */
+.overlay {
+  z-index: 9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.overlay-slide-right {
+  transition: all 0.4s ease-in-out;
+  transform: translateX(0);
+}
+
+.overlay-slide-left {
+  transition: all 0.8s ease-in-out;
+  transform: translateX(-100%);
+}
+
+/* NAV MENU ITEMS */
+nav ul {
+  height: 100vh;
+  height: 100svh;
+  list-style: none;
+}
+
+nav ul li {
+    height: 20%;
+}
+
+nav li:nth-of-type(1) {
+  background-color: #626059;
+}
+
+nav li:nth-of-type(2) {
+  background-color: #9d5543;
+}
+
+nav li:nth-of-type(3) {
+  background-color: #3d405b;
+}
+
+nav li:nth-of-type(4) {
+  background-color: #5a7d6c;
+}
+
+nav li:nth-of-type(5) {
+  background-color: #917a56;
+}
+
+nav li a {
+  letter-spacing: 0.4rem;
+  font-size: 2rem;
+}
+
+nav li a:hover,
+nav li a:active {
+  transform: scale(1.2);
+}
+
+/***********************/
+/* NAV SLIDE IN ANIMATION */
+/***********************/
+
+.slide-in-1 {
+  animation: slide-in 0.4s linear 0.2s both;
+}
+
+.slide-in-2 {
+  animation: slide-in 0.4s linear 0.4s both;
+}
+
+.slide-in-3 {
+  animation: slide-in 0.4s linear 0.6s both;
+}
+
+.slide-in-4 {
+  animation: slide-in 0.4s linear 0.8s both;
+}
+
+.slide-in-5 {
+  animation: slide-in 0.4s linear 1s both;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/***********************/
+/* NAV SLIDE OUT ANIMATION */
+/***********************/
+
+.slide-out-1 {
+  animation: slide-out 0.3s linear 0.5s both;
+}
+
+.slide-out-2 {
+  animation: slide-out 0.3s linear 0.4s both;
+}
+
+.slide-out-3 {
+  animation: slide-out 0.3s linear 0.3s both;
+}
+
+.slide-out-4 {
+  animation: slide-out 0.3s linear 0.2s both;
+}
+
+.slide-out-5 {
+  animation: slide-out 0.3s linear 0.1s both;
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/***********************/
+/* HAMBURGER MENU ANIMATION */
+/***********************/
+
+.hamburger-menu {
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.menu-bar1,
+.menu-bar2,
+.menu-bar3 {
+  width: 2.5rem;
+  height: 0.2rem;
+  background-color: #fff;
+  margin: 0.8rem 0;
+  transition: 0.4s;
+}
+
+.menu-bar2 {
+  width: 1rem;
+  margin-left: auto;
+}
+
+/* ROTATE FIRST BAR */
+.active .menu-bar1 {
+  transform: rotate(-45deg) translate(-0.7rem, 0.8rem);
+}
+
+/* FADE OUT SECOND BAR */
+.active .menu-bar2 {
+  opacity: 0;
+}
+
+/* ROTATE LAST BAR */
+.active .menu-bar3 {
+  transform: rotate(45deg) translate(-0.6rem, -0.8rem);
+}
+
+
+.logo {
+  position: fixed;
+  z-index: 2;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-size: 1.4rem;
+  letter-spacing: 0.3rem;
+}
+
+
+
         body {
             margin: 0;
             padding: 0;
@@ -84,7 +307,7 @@ Sixtyfour: CSS class for a variable style
 
         .header{
             font-family: "Sixtyfour", sans-serif;
-            margin-top: 2rem;
+            margin-top: 1.3rem;
             margin-bottom: 2rem;
             font-size: 2rem;
             color: Ivory;
@@ -98,6 +321,7 @@ Sixtyfour: CSS class for a variable style
             border: 0.1rem solid ivory;
             border-style: ridge;
             border-radius: 0.5rem;
+            background:#3d405b;
         }
         .url {
     display: inline-block; /* Change display to inline-block */
@@ -144,6 +368,13 @@ Sixtyfour: CSS class for a variable style
             height: auto;
         }
 
+        .tip{
+            /* background-color: #f9dcc4; */
+            color: #fec89a;
+            font-size: 0.8rem ;
+            font-family: "Gugi", sans-serif;
+        }
+
         .container {
             /* max-width: 100%; */
             overflow-x: hidden; 
@@ -157,15 +388,49 @@ Sixtyfour: CSS class for a variable style
         .input-group {
             width: 100%;
         }
+        nav{
+            background: #121212;
+        }
     </style>
 </head>
 <body class="container-fluid">
+    <!-- MENU OVERLAY -->
+<div class="overlay overlay-slide-left" id="overlay">
+    <!-- MENU ITEMS -->
+    <nav>
+      <ul>
+        <li id="nav-1" class="slide-out-1 center">
+          <a href="/" class="center">Home</a>
+        </li>
+        <li id="nav-2" class="slide-out-2 center">
+          <a href="/telugu" class="center">తాజా తెలుగు</a>
+        </li>
+        <li id="nav-3" class="slide-out-3 center">
+          <a href="/english" class="center">Latest English</a>
+        </li>
+        <li id="nav-4" class="slide-out-4 center">
+          <a href="/hindi" class="center">नवीनतम हिंदी</a>
+        </li>
+        <li id="nav-5" class="slide-out-5 center">
+          <a href="/spanish" class="center">Últimas español</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <!-- HAMBURGER MENU -->
+  <div class="hamburger-menu" id="hamburger-menu">
+    <div class="menu-bar1"></div>
+    <div class="menu-bar2"></div>
+    <div class="menu-bar3"></div>
+  </div>
+
     <div class="container">
         <div class="header text-center">
             <p>NewsForge</p>
             <p style="font-size: 1rem; font-family: Grenze Gotisch, serif; margin-top: -1rem;">Stay informed, stay empowered. NewsForge brings you the world's stories at your fingertips.</p>
         </div>
-        <form action="/" method="post" class="form-group">
+        <p class="text-center tip">Tip: Search in your native language for more accurate news. For instance, if you're looking for Telugu news, type your query in Telugu for better results.</p><br>
+        <form action="/" method="post" class="form-group text-center">
             <div class="row">
                 <div class="col-md-3">
                     <input type="text" class="form-control form-control-sm topic" name="query" id="query" placeholder="Enter topic to search" required><br>
@@ -214,7 +479,7 @@ Sixtyfour: CSS class for a variable style
                         <p class="source">Source: <span>{{ article.source }}</span></p>
                         <p class="title">Title: <span>{{ article.title }}</span></p>
                         <div class="formatted-content"><span>Published Date:{{article.date}}    {{ article.desc }}</span></div>
-                        <p class="url">URL: <span><a href="{{ article.url }}" target="_blank">{{ article.url }}</a></span></p>
+                        <p class="url">URL: <span><a href="{{ article.url }}" target="_blank"><button class="btn btn-info btn-sm">Click Here to see Full Article !!</button></a></span></p>
                         <p class="img"><img src="{{ article.image }}" alt="{{ article.title }}"></p>
                         <!-- <p class="content">Content: {{ article.content }}</p> -->
                     </div>
@@ -232,6 +497,50 @@ Sixtyfour: CSS class for a variable style
     </footer>
 
     <script>
+        const hamburgerMenu = document.querySelector("#hamburger-menu");
+const overlay = document.querySelector("#overlay");
+const nav1 = document.querySelector("#nav-1");
+const nav2 = document.querySelector("#nav-2");
+const nav3 = document.querySelector("#nav-3");
+const nav4 = document.querySelector("#nav-4");
+const nav5 = document.querySelector("#nav-5");
+const navItems = [nav1, nav2, nav3, nav4, nav5];
+
+// Control Navigation Animation
+function navAnimation(val1, val2) {
+  navItems.forEach((nav, i) => {
+    nav.classList.replace(`slide-${val1}-${i + 1}`, `slide-${val2}-${i + 1}`);
+  });
+}
+
+function toggleNav() {
+  // Toggle: Hamburger Open/Close
+  hamburgerMenu.classList.toggle("active");
+
+  //   Toggle: Menu Active
+  overlay.classList.toggle("overlay-active");
+
+  if (overlay.classList.contains("overlay-active")) {
+    // Animate In - Overlay
+    overlay.classList.replace("overlay-slide-left", "overlay-slide-right");
+
+    // Animate In - Nav Items
+    navAnimation("out", "in");
+  } else {
+    // Animate Out - Overlay
+    overlay.classList.replace("overlay-slide-right", "overlay-slide-left");
+
+    // Animate Out - Nav Items
+    navAnimation("in", "out");
+  }
+}
+
+// Events Listeners
+hamburgerMenu.addEventListener("click", toggleNav);
+navItems.forEach((nav) => {
+  nav.addEventListener("click", toggleNav);
+});
+
         document.addEventListener('DOMContentLoaded', function() {
             // Get the query parameter from the URL
             const urlParams = new URLSearchParams(window.location.search);
@@ -250,6 +559,8 @@ Sixtyfour: CSS class for a variable style
     
         });
     </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js"></script>
+
     
 </body>
 </html>
