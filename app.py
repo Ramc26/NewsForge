@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template
-from driver import getNews, getNewsTe, getNewsEn
+from driver import getNews, getNewsTe, getNewsEn,getNewsSp,getNewsHi
 
 app = Flask(__name__)
 
@@ -37,8 +37,34 @@ def English():
 
     elif request.method == 'GET':
         news_data = getNewsEn()
+    return render_template('index.html', data=news_data)
+
+@app.route('/hindi', methods=['GET', 'POST'])
+def Hindi():
+    news_data = None
+    if request.method == 'POST':
+        query = request.form['query']
+        lang=request.form['language']
+        category=request.form['category']
+        news_data = getNews(query,lang,category)
+
+    elif request.method == 'GET':
+        news_data = getNewsHi()
     return render_template('index.html', data=news_data,)
-    
+
+@app.route('/spanish', methods=['GET', 'POST'])
+def Spanish():
+    news_data = None
+    if request.method == 'POST':
+        query = request.form['query']
+        lang=request.form['language']
+        category=request.form['category']
+        news_data = getNews(query,lang,category)
+
+    elif request.method == 'GET':
+        news_data = getNewsSp()
+    return render_template('index.html', data=news_data,)
+
     
 
 if __name__ == '__main__':

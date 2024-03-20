@@ -68,6 +68,7 @@ Sixtyfour: CSS class for a variable style
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@100..900&family=Chivo+Mono:ital,wght@0,100..900;1,100..900&family=Grenze+Gotisch:wght@100..900&family=Gugi&family=Sixtyfour&display=swap');
         @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
 /***********************/
 /* RESET CSS */
@@ -315,26 +316,27 @@ nav li a:active {
         }
 
         .article {
-            padding: 1rem 1rem;
-            margin-bottom: 2rem;
-            margin-top: 1rem;
-            border: 0.1rem solid ivory;
-            border-style: ridge;
-            border-radius: 0.5rem;
+            /* margin-bottom: 20rem; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
             background:#3d405b;
+            max-width: 600px; /* Adjust as needed */
+            margin: 0 auto;
+            overflow: auto;
+            /* padding: 20px; */
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            /* margin-bottom: -500px; */
         }
-        .url {
-    display: inline-block; /* Change display to inline-block */
-    font-family: "Gugi", sans-serif;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-}
 
         .source, .title, .desc, .url, .img {
-            font-family: "Big Shoulders Stencil Display", sans-serif;
-            margin-bottom: 10px;
+            /* font-family: "Big Shoulders Stencil Display", sans-serif; */
+            font-family: "Space Grotesk", sans-serif;
+            /* margin-bottom: 10px; */
             color: #fec89a;
-            font-size: 1.7rem;
+            /* font-size: 1.7rem; */
         }
 
         footer {
@@ -366,6 +368,7 @@ nav li a:active {
         img {
             max-width: 100%;
             height: auto;
+
         }
 
         .tip{
@@ -379,21 +382,116 @@ nav li a:active {
             /* max-width: 100%; */
             overflow-x: hidden; 
         }
+        .image-container {
+    width: 100%;
+    max-height: 100%; /* Adjust the height of the image container */
+    overflow: hidden;
+    /* margin-bottom: 20px; */
+  }
 
-        img{
-            filter: drop-shadow(rgba(255, 255, 255, 0.499) 0rem 0rem 0.5rem);
-            border-radius: 1rem;
-        }
+  .image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
 
+     
         .input-group {
             width: 100%;
         }
         nav{
             background: #121212;
         }
+
+        .content {
+            text-align: justify; /* Adjust text alignment as needed */
+            line-height: 1.5;
+            padding: 0.5rem;
+            word-wrap: break-word;
+          }
+.button-30 {
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  margin: 2rem 0rem;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  /* font-family: "JetBrains Mono",monospace; */
+  font-family: "Space Grotesk", sans-serif;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 1rem;
+}
+
+.button-30:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.button-30:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-30:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+/* CSS */
+.button-11 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border-radius: 6px;
+  color: #3D3D3D;
+  background: #fff;
+  border: none;
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-11:focus {
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+  outline: 0;
+}
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+}
     </style>
 </head>
 <body class="container-fluid">
+  <!-- <button
+        type="button"
+        class="btn btn-danger btn-floating btn-lg"
+        id="btn-back-to-top"
+        >
+  <i class="fas fa-arrow-up"></i>
+</button> -->
     <!-- MENU OVERLAY -->
 <div class="overlay overlay-slide-left" id="overlay">
     <!-- MENU ITEMS -->
@@ -467,7 +565,13 @@ nav li a:active {
                         </select><br>
                     </div>
                     <div class="col-md-3 d-grid gap-2 d-md-block">
-                        <input type="submit" class="btn btn-primary custom-select" value="Search"> 
+                      <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                        <button type="button" type="submit" class="btn button-11 custom-select d-flex justify-content-center" value="Find Articles !!">Find Articles</button>
+                        <button type="button" class="btn button-11 custom-select d-flex justify-content-center" value="Find Articles !!"><a href="https://weathernowapp.onrender.com/" target="_blank" class="d-flex justify-content-center" style="color: brown;">Get Weather</a></button>
+                      </div>
+                        <!-- <input type="submit" class="btn button-11 custom-select d-flex justify-content-center" value="Find Articles !!"/> <br>
+                                <a href="https://weathernowapp.onrender.com/" target="_blank" class="d-flex justify-content-center"><button type="submit" class="btn button-11 custom-select" value="Find Weather !!">Find Weather !!</button> </a> -->
+
                     </div>
             </div>
         </form>
@@ -475,13 +579,18 @@ nav li a:active {
         <div class="articles">
             {% if data %}
                 {% for article in data %}
-                    <div class="article">
+                    <div class="article" style="border-radius: 1rem; margin-bottom: 2rem;">
+                      <div class="image-container" style="border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
+                        <img src="{{ article.image }}" alt="{{ article.title }}" class="img">
+                      </div>
+                      <div class="content">
                         <p class="source">Source: <span>{{ article.source }}</span></p>
                         <p class="title">Title: <span>{{ article.title }}</span></p>
                         <div class="formatted-content"><span>Published Date:{{article.date}}    {{ article.desc }}</span></div>
-                        <p class="url">URL: <span><a href="{{ article.url }}" target="_blank"><button class="btn btn-info btn-sm">Click Here to see Full Article !!</button></a></span></p>
-                        <p class="img"><img src="{{ article.image }}" alt="{{ article.title }}"></p>
+                        <div class="url d-flex justify-content-center"><span><a href="{{ article.url }}" target="_blank"><button class="button-30">Click Here to see Full Article !!</button></a></span></div>
                         <!-- <p class="content">Content: {{ article.content }}</p> -->
+                        
+                      </div>
                     </div>
                 {% endfor %}
             {% else %}
@@ -558,7 +667,52 @@ navItems.forEach((nav) => {
             });
     
         });
+
+        //Get the button
+      let mybutton = document.getElementById("btn-back-to-top");
+
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      // When the user clicks on the button, scroll to the top of the document
+      mybutton.addEventListener("click", backToTop);
+
+      function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
     </script>
+    <script type="text/javascript">
+
+      // JSON-formatted, potentially read from a database
+      var article = {
+          title: {
+            en_US: "Article Title",
+            fr_FR: "Titre de l\'Article"
+          },
+          content: {
+            en_US: "Content of the Article.",
+            fr_FR: "Contenu de l\'Article."
+          }
+      }
+      
+      // simple function to write the info to the page
+      function get_i18n(item, lang) {
+          document.write(article[item][lang]);
+      }
+      </script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js"></script>
 
     
