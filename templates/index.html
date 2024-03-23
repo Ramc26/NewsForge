@@ -320,15 +320,24 @@ nav li a:active {
             display: flex;
             flex-direction: column;
             align-items: center;
+
             width: 100%;
-            background:#3d405b;
-            max-width: 600px; /* Adjust as needed */
-            margin: 0 auto;
+            /* background:#3d405b; */
+            max-width : 60rem;
+            /* margin: 0 auto; */
             overflow: auto;
             /* padding: 20px; */
             border: 1px solid #ccc;
             box-sizing: border-box;
             /* margin-bottom: -500px; */
+            margin-top: 5rem;
+            /* width: 60rem; */
+            border: none;
+            height: auto;
+            border-radius: 45px;
+background: #212121;
+box-shadow: 3px 3px 10px rgba(0,0,0,1),
+  -1px -1px 6px rgba(255, 255, 255, 0.4);
         }
 
         .source, .title, .desc, .url, .img {
@@ -455,6 +464,22 @@ nav li a:active {
   box-shadow: #D6D6E7 0 3px 7px inset;
   transform: translateY(2px);
 }
+.card {
+            /* margin-top: 5rem; */
+            /* width: 30rem; */
+            border: none;
+            margin: 0;
+            padding-top: 2rem;
+            /* padding-bottom: -10px; */
+            padding-left: 2rem;
+            padding-right: 2rem;
+            /* align-items: center; */
+            height: auto;
+            border-radius: 25px;
+            background: #212121;
+            box-shadow:  3px 3px 10px rgba(0,0,0,1),
+            -1px -1px 6px rgba(255, 255, 255, 0.4);
+        }
 /* CSS */
 .button-11 {
   display: flex;
@@ -466,6 +491,7 @@ nav li a:active {
   color: #3D3D3D;
   background: #fff;
   border: none;
+  width: 100%;
   box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
   user-select: none;
   -webkit-user-select: none;
@@ -475,6 +501,7 @@ nav li a:active {
 .button-11:focus {
   box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
   outline: 0;
+  color: ivory;
 }
 #btn-back-to-top {
   position: fixed;
@@ -528,7 +555,8 @@ nav li a:active {
             <p style="font-size: 1rem; font-family: Grenze Gotisch, serif; margin-top: -1rem;">Stay informed, stay empowered. NewsForge brings you the world's stories at your fingertips.</p>
         </div>
         <p class="text-center tip">Tip: Search in your native language for more accurate news. For instance, if you're looking for Telugu news, type your query in Telugu for better results.</p><br>
-        <form action="/" method="post" class="form-group text-center">
+        <div class="card">
+          <form action="/" method="post" class="form-group text-center">
             <div class="row">
                 <div class="col-md-3">
                     <input type="text" class="form-control form-control-sm topic" name="query" id="query" placeholder="Enter topic to search" required><br>
@@ -564,22 +592,21 @@ nav li a:active {
                             <option value="world">World</option>
                         </select><br>
                     </div>
-                    <div class="col-md-3 d-grid gap-2 d-md-block">
-                      <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                        <button type="button" type="submit" class="btn button-11 custom-select d-flex justify-content-center" value="Find Articles !!">Find Articles</button>
-                        <button type="button" class="btn button-11 custom-select d-flex justify-content-center" value="Find Articles !!"><a href="https://weathernowapp.onrender.com/" target="_blank" class="d-flex justify-content-center" style="color: brown;">Get Weather</a></button>
-                      </div>
-                        <!-- <input type="submit" class="btn button-11 custom-select d-flex justify-content-center" value="Find Articles !!"/> <br>
-                                <a href="https://weathernowapp.onrender.com/" target="_blank" class="d-flex justify-content-center"><button type="submit" class="btn button-11 custom-select" value="Find Weather !!">Find Weather !!</button> </a> -->
+                    <div class="col-md-3">
+                        <!-- <button type="button" type="submit" class="" value="Find Articles !!">Find Articles</button> -->
+                        <input type="submit" class="btn button-11 custom-select d-flex justify-content-center" value="Find Articles !!"/>
+                                <!-- <a href="https://weathernowapp.onrender.com/" target="_blank" class="d-flex justify-content-center"><button type="submit" class="btn button-11 custom-select" value="Find Weather !!">Find Weather !!</button> </a> -->
 
                     </div>
             </div>
         </form>
+        </div>
         
         <div class="articles">
             {% if data %}
                 {% for article in data %}
-                    <div class="article" style="border-radius: 1rem; margin-bottom: 2rem;">
+                <center>
+                    <div class="article text-center" style="border-radius: 1rem; margin-bottom: 2rem;">
                       <div class="image-container" style="border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
                         <img src="{{ article.image }}" alt="{{ article.title }}" class="img">
                       </div>
@@ -591,7 +618,7 @@ nav li a:active {
                         <!-- <p class="content">Content: {{ article.content }}</p> -->
                         
                       </div>
-                    </div>
+                    </div></center>
                 {% endfor %}
             {% else %}
                 <p class="NAF">No articles found. Try different search</p>
